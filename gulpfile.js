@@ -100,6 +100,11 @@ gulp.task('watch', () => {
   gulp.watch(['./source/sass/**/*.sass', './source/sass/**/*.scss'], ['sass']);
 });
 
+
+gulp.task('ghpage', () => {
+  return gulp.src('./public/**/*').pipe($.ghPages());
+});
+
 gulp.task('default', ['copy', 'sass', 'layout', 'browserSync', 'watch']);
 
 // gulp.task('default', ['copy', 'sass', 'vendorJs', 'browserSync', 'layout', 'watch']);
