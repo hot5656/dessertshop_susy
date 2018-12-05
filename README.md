@@ -14,6 +14,8 @@ npm install
 gulp
 // release
 gulp --env production
+//publish contents to Github pages
+npm ghpage
 ```
 
 ## 紀錄
