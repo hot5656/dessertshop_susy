@@ -1,10 +1,56 @@
----
-title: 結帳
-layout: ./source/layout.ejs
-engine: ejs
-current: checkout
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 什麼版本IE 就用什麼版本的標準模式 -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- webpage icon -->
+	<link rel="icon" href="img/favicon_32.ico" type="image/ico" />
+	<!-- Title -->
+	<title>甜點電商 - 結帳</title>
+	<!-- 網頁標題 -->
+	<meta property="og:title" content="甜點電商 - 結帳 "/>
+	<!-- 網站描述 -->
+	<meta property="og:description" content="最好的甜點"/>
+	<!-- 網站名稱 -->
+	<meta property="og:site_name" content="甜點電商"/>
+	<!-- 網站主要的語系 -->
+	<meta property="og:locale" content="zh_TW"/>
+	<link rel="stylesheet" href="css/all.css">
+	<!-- Material icon	 -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+</head>
+<body>
+	<header class="col-container">
+		<div class="col-row">
+			<a class="menu" href="#">
+				<i class="material-icons">menu</i>
+			</a>
+			<a class="l-title" href="index.html">
+				<img src="img/logotype-sm-dark.svg" style="height: 18px" alt="">
+			</a>
 
+			<a href="index.html" class="l-head__logo">
+				<img src="./img/logo-all-dark.svg" alt="">
+			</a>
+			<nav>
+				<ul>
+					<li><a href="index.html">首頁</a></li>
+					<li><a href="product.html">甜點</a></li>
+					<li><a href="register.html">登入</a></li>
+				</ul>
+			</nav>
+			<a href="cart.html" class="l-head__cart">
+				<i class="material-icons md-24">shopping_cart</i>
+			</a>
+		</div>
+	</header>
+
+	<!-- html content -->
+	
 <div class="p-checkout">
   <div class="col-container">
     <div class="col-row">
@@ -95,3 +141,54 @@ current: checkout
   </div>
 </div>
 
+
+	<!-- html content end -->
+
+	<!-- <div class="clearfix"></div> -->
+	<footer>
+		<div class="l-submit">
+			<div class="col-container">
+				<div class="col-row">
+					<div class="col-ma col-ps-mr0 col-auto col-ps-5 offset-ps-1">
+						<img src="./img/logo-light.svg" alt="">
+						<h3>訂閱你我的甜蜜郵件</h3>
+					</div>
+					<div class="col-m30 col-ps-mr0 col-30px col-ps-5 offset-ps-0">
+						<form action="">
+							<i class="mail material-icons">mail</i>
+							<input type="text">
+							<button>
+								<i class="material-icons">arrow_forward</i>
+							</button>
+						</form>				
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="l-bottom">
+			<div class="col-container">
+				<div class="col-row">
+					<div class="col-m30 col-ps-mr0 offset-ps-1 col-12 col-ps-6 l-bottom-address">
+						<img class="l-bottom-title" src="img/logotype-sm-dark.svg" style="height: 26px" alt="">
+						<p style="width: 217px">07-1234-5678 sweetaste@email.com 800 高雄市新興區幸福路 520 號</p>
+						<a href="#">
+							<img src="img/ic-line@.svg" style="height: 32px" alt="">
+						</a>
+						<a href="#">
+							<img src="img/ic-facebook.svg" style="height: 32px" alt="">
+						</a>
+					</div>
+					
+					<div class="offset-ps-0 col-none col-ps-4 col-mr1 l-bottom-copyright">
+						<img src="img/sm-今天是個吃甜點的好日子.svg" style="height: 218px" alt="">
+							<p>© 2018 Sweetaste* All Rights Reserved</p>
+					</div>
+					<div class="col-m30 col-12 col-ps-none copyright-last">
+						<p>© 2018 Sweetaste* All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
