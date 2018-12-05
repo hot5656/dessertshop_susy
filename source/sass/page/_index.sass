@@ -1,0 +1,199 @@
+.p-hero 
+  .head
+    width: 100%
+    background-image: url("../img/photo-1473256599800-b48c7c88cd7e.jpg")
+    height: 496px
+    // border: 1px solid blue
+    background-position: 50% 50%
+    background-size: 100% 150%
+    z-index: -10
+    +breakpoint(ps)
+      height: 277px
+      background-size: 100% 100%
+  .list
+    a 
+      display: block
+    .list__form
+      display: block
+      color: $c-primary
+      height: 256px
+      width: 27.659%
+      position: relative
+      font-size: 1.5rem
+      font-weight: bold
+      top: -90px
+      // border: 1px solid red
+      +breakpoint(ps)
+        height: 180px
+        width: 33.33%
+        top: 0
+        font-size: 1.25rem
+    .bg-warning
+      +bg($c-warning, 0.8)
+      &:hover
+        +bg($c-warning, 0.7)
+    .bg-primary
+      +bg($c-primary, 0.8)
+      &:hover
+        +bg($c-primary, 0.7)
+    p 
+      writing-mode: vertical-lr;
+      position: relative
+      margin: 0 auto
+      top: calc(50% - 3rem)
+    .c-secondary
+      color: $c-secondary
+    .day 
+      position: absolute
+      background-image: url("../img/photo-1490914327627-9fe8d52f4d90.jpg")
+      z-index: -2
+      background-position: 50% 50%
+      background-size: 100% 100%
+      height: 100%
+      width: 100%
+    .popular
+      position: absolute
+      background-image: url("../img/photo-1504114133367-631ecd3db3ca.jpg")
+      background-position: 50% 50%
+      background-size: 100% 100%
+      z-index: -2
+      height: 100%
+      width: 100%
+      border-left: 2px solid $c-secondary
+      border-right: 2px solid $c-secondary
+    .new
+      position: absolute
+      background-image: url("../img/photo-1499638472904-ea5c6178a300.jpg")
+      z-index: -2
+      background-position: 50% 50%
+      background-size: 100% 100%
+      height: 100%
+      width: 100%
+.showlong
+  background: $c-secondary
+  max-width: $width-long
+  margin: 0 auto
+  height: 420px
+  margin-bottom: 105px
+  +breakpoint(ps)
+    height: auto
+    margin-bottom: 0
+  .showtext
+    margin-top: 70px
+    writing-mode: vertical-rl
+    height: 312px
+    color: $c-info
+    width: 100%
+    +breakpoint(ps)
+      writing-mode: horizontal-tb
+      width: calc(100% - 60px)
+      height: auto
+      margin: 30px
+      font-size: 0.8rem
+    p 
+      line-height: 36px
+      font-weight: $weight-light
+    .p-m
+      margin-top: 0
+      margin-right: 50px
+      +breakpoint(ps)
+        margin-top: 30px
+        margin-right: 0
+  .dish
+    position: relative
+    height: 460px
+    top: -20px
+    background-image: url("../img/photo-1519730722595-a5ff788dea4d.jpg")
+    background-position: 50% 50%
+    +breakpoint(ps)
+      height: 250px
+      background-size: 100%
+      top: 0
+  .title
+    position: relative
+    img
+      width: 89px
+      position: absolute
+      right: 0
+      top: -20px
+    +breakpoint(ps)
+      height: 120px
+      background: white
+      img
+        position: static
+        width: 196px
+        margin-top: 30px 
+        margin-left: calc(50% - 98px)
+  //-----------------------
+.showlong2
+  background: $c-secondary
+  max-width: $width-long
+  margin: 0 auto
+  height: 420px
+  +breakpoint(ps)
+    height: auto
+  .showtext2
+    margin-top: 70px
+    writing-mode: vertical-rl
+    height: 312px
+    color: $c-info
+    +breakpoint(ps)
+      writing-mode: horizontal-tb
+      width: calc(100% - 60px)
+      height: auto
+      margin: 30px
+      font-size: 0.8rem
+    p 
+      line-height: 36px
+    .p-m
+      margin-top: 0
+      margin-right: 50px
+      +breakpoint(ps)
+        margin-top: 30px
+        margin-right: 0
+  .dish2
+    position: relative
+    height: 460px
+    top: -20px
+    background-image: url("../img/photo-1501432781167-c0ccfd492297.jpg")
+    background-position: 50% 50%
+    +breakpoint(ps)
+      height: 250px
+      background-size: 100%
+      top: 0
+  .title2
+    position: relative
+    img
+      width: 89px
+      position: absolute
+      left: calc(50% - 44px);
+      top: -20px
+    +breakpoint(ps)
+      height: 120px
+      background: white
+      img
+        position: static
+        width: 196px
+        margin-top: 30px 
+        margin-left: calc(50% - 98px)
+
+.showlong3
+  max-width: $width-long
+  margin: 0 auto
+  height: 500px
+  +breakpoint(ps)
+    height: auto
+  .title3
+    position: relative
+    img
+      width: 89px
+      position: absolute
+      left: calc(50% - 44px);
+      top: 250px - 160px
+    +breakpoint(ps)
+      height: 120px
+      img
+        position: static
+        width: 196px
+        margin-top: 30px 
+        margin-left: calc(50% - 98px)

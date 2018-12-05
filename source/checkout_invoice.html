@@ -1,0 +1,86 @@
+---
+title: 結帳
+layout: ./source/layout.ejs
+engine: ejs
+current: checkout
+---
+
+<div class="p-checkout">
+	<div class="col-container">
+		<div class="col-row">
+			<div class="p-checkout__profile col-12 offset-pd-1 col-pd-6">
+				<div class="profile-up">
+					<div class="title">
+						<h2>發票</h2>
+						<div class="process-bar">
+							<ul>
+								<li class="i-process__done">
+									<i class="material-icons">done</i>
+								</li>
+								<li class="i-process__line"></li>
+								<li class="i-process__done">
+									<i class="material-icons">done</i>
+								</li>
+								<li class="i-process__line"></li>
+								<li class="i-process__doing"></li>
+							</ul>
+						</div>
+					</div>
+					<form action="">
+						<a class="item-2f active" href="">電子發票</a>
+						<a class="item-2f" hhref="">郵寄發票</a>
+
+						<label for="" class="item-1">電子郵件信箱</label>
+						<input type="text" id="email" class="item-1"placeholder="example@email.com">
+						<label for="" class="item-1">統一編號（選填）</label>
+						<input type="text" id="id" class="item-1"placeholder="12345678">
+					</form>
+				</div>
+				<a href="checkout_invoice_mail.html" class="next">確認結帳</a>
+			</div>
+			<div class="p-checkout__list col-none offset-pd-0 col-pd-4">
+				<div class="order-summary">
+					<h3>訂單摘要</h3>
+          <div class="sub-item">
+            <p class="title">小計</p>
+            <p class="price">NT$ 2,700</p>
+          </div>
+          <div class="sub-item">
+            <p class="title">運費</p>
+            <p class="price">NT$ 300</p>
+          </div>
+          <div class="total">
+            <p class="title">總計</p>
+            <p class="price">NT$ 3,000</p>
+          </div>
+				</div>
+				<div class="order-list">
+					<h3>購物清單</h3>
+					<ul>
+						<li>
+							<div class="dish" style="background-image: url(https://bit.ly/2QvsT63)"></div>
+							<div class="name-price">
+								<p class="name">焦糖馬卡龍 (2)</p>
+								<p class="price">NT$ 900</p>
+							</div>
+						</li>
+						<li>
+							<div class="dish" style="background-image: url(https://bit.ly/2zBDAxX)"></div>
+							<div class="name-price">
+								<p class="name">焦糖馬卡龍 (2)</p>
+								<p class="price">NT$ 900</p>
+							</div>
+						</li>
+						<li>
+							<div class="dish" style="background-image: url(https://bit.ly/2zKOP7w)"></div>
+							<div class="name-price">
+								<p class="name">焦糖馬卡龍 (2)</p>
+								<p class="price">NT$ 900</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

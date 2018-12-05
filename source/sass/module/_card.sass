@@ -1,0 +1,52 @@
+@import ../init/mixin
+@import ../init/variable
+  
+.m-card
+  // border: 1px solid blue
+  color: $c-primary
+  text-align: center
+  position: relative
+  &__img
+    height: 315px
+    width: 100%
+    background-position: 50% 50%
+    background-size: 105%
+  &__title
+    height: 56px
+    font-size: 1.25rem
+    line-height: 56px
+  &__name
+    float: left
+    width: 57.66%
+    border-left: 1px solid $c-secondary
+    border-right: 1px solid $c-secondary
+    font-weight: $weight-light
+    // border: 1px solid red
+  &__price
+    float: left
+    width: calc(100% - 57.66%)
+    border-right: 1px solid $c-secondary
+    //   border: 1px solid red
+  &__cart
+    display: block
+    width: 100%
+    background: $c-secondary
+    height: 65px
+    font-size: 1.5rem
+    line-height: 65px
+    &:hover
+      background: $c-info
+  &__slide
+    color: $c-secondary
+    background: $c-primary
+    position: absolute
+    left: 0
+    writing-mode: vertical-rl
+    padding: 20px 10px
+  i 
+    color: $c-primary
+    position: absolute
+    top: 20px
+    right: 20px
+
+

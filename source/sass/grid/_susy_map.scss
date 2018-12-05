@@ -1,0 +1,163 @@
+// import susy
+@import "susy";
+@import "plugins/svg-grid";
+
+// Settings
+$susy: (
+  'columns': susy-repeat(12),	// 幾格
+  'svg-grid-colors': hsla(180, 50%, 50%, 0.25),	// 測試格顏色
+  'gutters': 1/3
+);
+
+// box-sizing
+* { box-sizing: border-box; }
+
+.col-container {
+  max-width: $width;
+  margin: 0 auto;
+  // debug background
+  // background: susy-svg-grid($grid: $susy) no-repeat scroll;
+  // border: 1px solid blue;
+  z-index: -100;
+}
+
+.col-row {
+  display: flex;
+  flex-wrap : wrap; // 超過換行
+  //justify-content: space-between; // 間隔平均放中間
+  justify-content: flex-start;
+}
+
+
+$grid-columns:                12 ;
+
+//min 320~568
+//min 569~767
+//min 768~1023
+//min 1024~
+$grid-min-breakpoints: (
+  mb: 0px,
+  ps: 569px,
+  pd: 768px,
+  pc: 1024px,
+) ;
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+@mixin make-col-span($size, $columns: $grid-columns) {
+  display: block;
+  width: span($size);
+  // border: 1px solid red;
+}
+
+@mixin media-breakpoint-min($name, $value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+@mixin col-include($name, $infix) {
+  @if $name == "mb" {
+    .col-30px {
+      width: calc(100% - 60px);
+      // border: 1px solid red;
+    }
+    .col-auto {
+      width: auto;
+      // border: 1px solid red;
+    }
+    .col-m0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .col-ma {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .col-m30 {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    .col-mr0 {
+      margin-right: 0;
+    }
+    .col-none {
+      display: none;
+    }
+  } @else {
+    .col#{$infix}-30px {
+      width: calc(100% - 60px);
+    }
+    .col#{$infix}-auto {
+      width: auto;
+      // border: 1px solid red;
+    }
+    .col#{$infix}-m0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .col#{$infix}-ma {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .col#{$infix}-m30 {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    .col#{$infix}-mr0 {
+      margin-right: 0;
+    }
+    .col#{$infix}-none {
+      display: none;
+    }
+  }   
+}
+
+@mixin make-min-grid-columns($columns: $grid-columns, $breakpoints: $grid-min-breakpoints) {
+  @each $name, $value in $breakpoints {
+    $infix: breakpoint-infix($name, $breakpoints);
+    
+    @include media-breakpoint-min($name, $value) {
+      // height: 100%;
+      // .col#{$infix} {
+      //   max-width: 100%;
+      // }
+
+      @for $i from 1 through $columns {
+        @if $name == "mb" {
+          .col-#{$i} {
+            @include make-col-span($i, $columns);
+          }
+        } @else {
+          .col#{$infix}-#{$i} {
+            @include make-col-span($i, $columns);
+          }
+        }
+      }
+
+      @for $i from 0 through ($columns - 1) {
+        @if $name == "mb" {
+          .offset-#{$i} {
+            @if $i == 0 {
+              margin-left: gutter() ;
+            } @else {
+              margin-left: span($i)+gutter() ;
+            }
+          }
+        } @else {
+          .offset#{$infix}-#{$i} {
+            @if $i == 0 {
+              margin-left: gutter() ;
+            } @else {
+              margin-left: span($i)+gutter() ;
+            }
+          }
+        }
+      }
+
+      @include  col-include($name, $infix);
+    }
+  }
+}
+
+@include make-min-grid-columns();

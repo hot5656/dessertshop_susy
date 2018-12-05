@@ -1,0 +1,211 @@
+// import susy
+@import "susy";
+@import "plugins/svg-grid";
+
+// Settings
+$susy: (
+	'columns': susy-repeat(12),	// 幾格
+	'svg-grid-colors': hsla(180, 50%, 50%, 0.25),	// 測試格顏色
+	'gutters': 1/3
+);
+
+// box-sizing
+* { box-sizing: border-box; }
+
+.col-container {
+	max-width: $width;
+	margin: 0 auto;
+	// debug background
+	background: susy-svg-grid($grid: $susy) no-repeat scroll;
+	border: 1px solid blue;
+}
+
+// @mixin flex-grid-susy {
+//   display: flex;
+//   justify-content: space-between; // 間隔平均放中間
+// }
+
+@include breakpoint(pad) {
+	.col-pd-5 {
+		width: span(5);
+		border: 1px solid red;
+	}
+	.col-pd-4 {
+		width: span(4);
+		border: 1px solid red;
+	}
+	.col-pd-6 {
+		width: span(6);
+		border: 1px solid red;
+	}
+	.col-pd-hide {
+		@include hide-text
+	}
+}
+
+@include breakpoint(pad-s) {
+	.col-sp-5 {
+		width: span(5);
+		border: 1px solid red;
+	}
+	.col-sp-4 {
+		width: span(4);
+		border: 1px solid red;
+	}
+	.col-sp-6 {
+		width: span(6);
+		border: 1px solid red;
+	}
+	.col-sp-12 {
+		width: span(12);
+		border: 1px solid red;
+	}
+	.col-sp-hide {
+		@include hide-text
+	}
+}
+
+@include breakpoint(mobile) {
+	.col-mb-5 {
+		width: span(5);
+		border: 1px solid red;
+	}
+	.col-mb-4 {
+		width: span(4);
+		border: 1px solid red;
+	}
+	.col-mb-6 {
+		width: span(6);
+		border: 1px solid red;
+	}
+	.col-mb-12 {
+		width: span(12);
+		border: 1px solid red;
+	}
+	.col-mb-hide {
+		@include hide-text
+	}
+}
+
+.col-ml1 {
+	margin-left: span(1) + gutter();
+}
+.col-mr1 {
+	margin-right: span(1) + gutter();
+}
+
+.col-row {
+	display: flex;
+	flex-wrap : wrap; // 超過換行
+	justify-content: space-between; // 間隔平均放中間
+}
+
+.col-center {
+  justify-content: center;
+}
+
+
+$grid-columns:                12 ;
+$grid-gutter-width:           30px ;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) ;
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px; // Prevent columns from collapsing when empty
+    padding-right: ($gutter / 2);
+    padding-left: ($gutter / 2);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none; // Reset earlier grid tiers
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .order#{$infix}-first { order: -1; }
+
+      .order#{$infix}-last { order: $columns + 1; }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} { order: $i; }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-grid-columns();

@@ -1,0 +1,85 @@
+---
+title: 購物車
+layout: ./source/layout.ejs
+engine: ejs
+current: cart
+---
+
+<div class="p-cart">
+	<div class="col-container">
+		<div class="col-row">
+			<div class="p-cart__car col-12 col-pd-8">
+				<h2>您的購物車</h2>
+				<ul class="item">
+					<li class="border-tottom">
+						<div class="dish" style="background-image: url(https://bit.ly/2QvsT63)"></div>
+						<div class="name-price">
+							<p>焦糖馬卡龍</p>
+							<p>NT$ 450</p>
+						</div>
+						<div class="buy-counter">
+								<button type="button">-</button>
+								<span>2</span>
+								<button type="button">+</button>
+						</div>
+						<div class="item-price">NT$ 1900</div>
+						<button type="button" class="remove">
+							<i class="material-icons">delete_outline</i>
+						</button>
+					</li>
+					<li class="border-tottom">
+							<div class="dish" style="background-image: url(https://bit.ly/2zBDAxX)"></div>
+							<div class="name-price">
+								<p>焦糖馬卡龍</p>
+								<p>NT$ 450</p>
+							</div>
+							<div class="buy-counter">
+									<button type="button">-</button>
+									<span>2</span>
+									<button type="button">+</button>
+							</div>
+							<div class="item-price">NT$ 1900</div>
+							<button type="button" class="remove">
+								<i class="material-icons">delete_outline</i>
+							</button>
+						</li>
+						<li>
+								<div class="dish" style="background-image: url(https://bit.ly/2zKOP7w)"></div>
+								<div class="name-price">
+									<p>焦糖馬卡龍</p>
+									<p>NT$ 450</p>
+								</div>
+								<div class="buy-counter">
+										<button type="button">-</button>
+										<span>2</span>
+										<button type="button">+</button>
+								</div>
+								<div class="item-price">NT$ 1900</div>
+								<button type="button" class="remove">
+									<i class="material-icons">delete_outline</i>
+								</button>
+							</li>
+				</ul>
+			</div>
+			<div class="p-cart__list col-m0 col-12 offset-pd-0 col-pd-4">
+				<div class="p-cart__list__paper">
+					<h2>訂單摘要</h2>
+					<div class="sub-item">
+						<p class="title">小計</p>
+						<p class="price">NT$ 2,700</p>
+					</div>
+					<div class="sub-item">
+						<p class="title">運費</p>
+						<p class="price">NT$ 300</p>
+					</div>
+					<div class="total">
+						<p class="title">總計</p>
+						<p class="price">NT$ 3,000</p>
+					</div>
+				</div>
+				<a class="pay" href="checkout_profile.html">結帳</a>
+			</div>
+		</div>
+	</div>
+</div>
+

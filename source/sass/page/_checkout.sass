@@ -1,0 +1,214 @@
+.p-checkout
+  +breakpoint(ps)
+    margin-bottom: -30px
+  &__profile
+    color: $c-secondary
+    .profile-up
+      background: $c-primary
+    label
+      1.25rem
+    .title
+      padding-left: 40px
+      padding-right: 40px
+      background: $c-primary
+      +clearfix
+      h2 
+        float: left
+        width: 48.5%
+        font-size: 2.25rem
+        line-height: 50px
+        margin-top: 30px
+        margin-bottom: 20px
+        margin-right: 3%
+      .process-bar
+        float: left
+        width: 48.5%
+        position: relative
+        top: 47px
+    form 
+      padding-left: 40px
+      padding-right: 40px
+      padding-bottom: 30px
+      +clearfix
+      [type="checkbox"]
+        position: relative;
+        top: 20px;
+      a 
+        float: left
+        display: block
+        line-height: 56px
+        font-size: 1.25rem
+        border: 1px solid $c-secondary
+        text-align: center
+        color:  $c-secondary
+        margin-top: 10px
+        margin-bottom: 20px
+      .check-send
+        float: right
+        label
+          font-size: 1rem
+      .active
+        color:  $c-primary
+        background: $c-secondary
+    label
+      line-height: 28px
+      display: block
+      float: left
+      font-size: 1.25rem
+      margin-top: 10px
+      margin-bottom: 8px
+      // border: 1px solid blue
+    input
+      line-height: 56px
+      display: block
+      float: left
+      background: $c-secondary
+      padding-left: 20px
+      border-width: 0
+      // border: 1px solid blue
+      &::placeholder
+        color: $c-info
+    .item-2f
+      width: 50%
+    .item-2
+      width: 48.5%
+    .item-2-2nd
+      margin-left: 3%
+      width: 48.5%
+    .item-2-2nd-s
+      margin-left: calc(3% - 4px)
+      width: 48.5%
+    .item-1
+      width: 100%
+    .item-32
+      width: 66%
+    .item-frame-1
+      width: 100%
+      // border: 1px solid red
+      background: $c-secondary
+      input 
+        width: calc( 100% - 50px)
+      i 
+        display: inline-block
+        float: right
+        color: $c-primary
+        margin-right: 20px
+        margin-top: 17px
+    select
+      appearance: none
+      background-image: url("../img/arrows-up-and-down.png")
+      background-position: 90% 50% 
+      background-repeat: no-repeat
+      padding-left: 20px
+      height: 56px
+      background-color: $c-secondary
+      color: $c-info
+      margin-bottom: 8px
+      border-width: 0
+    .next
+      display: block  
+      background: $c-warning
+      text-align: center
+      color: $c-primary
+      font-size: 1.5rem
+      line-height: 65px
+      width: 100%
+      &:hover
+        background: $c-warning-comp
+  &__list
+    h3 
+      font-size: 1.5rem
+      background: $c-secondary
+      line-height: 65px
+      text-align: center
+      margin-bottom: 16px
+    .order-summary
+      color: $c-info
+      border: 1px solid $c-secondary
+      .sub-item
+        margin: 8px 6% 0 6%
+        +clearfix
+        p 
+          font-weight: $weight-light
+      .total
+        font-size: 1.25rem
+        margin: 16px 6% 16px 6%
+        +clearfix
+      .title
+        float: left 
+      .price
+        float: right
+    .order-list
+      margin-top: 20px
+      padding-bottom: 16px
+      color: $c-info
+      border: 1px solid $c-secondary
+      ul 
+        margin: 0 6% 0 6%
+        li
+          margin-top: 16px
+          display: flex
+          align-items: center
+          +clearfix
+        .dish
+          width: 40%
+          height: 80px
+          background-position: center center
+          background-size: 125% 
+        .name-price
+          margin-left: 6%
+          width: 42%
+          .name 
+            font-weight: $weight-light
+          .price
+            font-size: 1.25rem
+  &__success
+    height: 460px
+    width: 100%
+    background-image: url(https://bit.ly/2P7GhNd)
+    background-position: center center
+    background-size: 100%
+    padding-top: 130px
+    padding-left: calc(50% - 150px)
+    padding-right: calc(50% - 150px)
+    +breakpoint(ps)
+      background-size: 150%
+    +breakpoint(mb)
+      height: 518px
+      background-size: 250%
+      padding-top: 210px
+      padding-left: 0
+      padding-right: 0
+      position: relative
+    .process-bar
+      width: 190px
+      color: $c-secondary
+      margin-left: auto
+      margin-right: auto
+      +clearfix
+    h2
+      font-size: 2.875rem
+      width: 190px
+      margin-top: 30px
+      margin-left: auto
+      margin-right: auto
+      color: $c-primary
+    .next
+      margin-top: 50px
+      display: inline-block
+      font-size: 1.5rem
+      background: $c-warning
+      width: 100%
+      line-height: 65px
+      text-align: center
+      color: $c-primary
+      &:hover
+        background: $c-warning-comp
+      +breakpoint(mb)
+        position: absolute
+        bottom: 0
+
+
+
+  
+  
