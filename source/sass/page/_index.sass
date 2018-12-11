@@ -3,13 +3,11 @@
     width: 100%
     background-image: url("../img/photo-1473256599800-b48c7c88cd7e.jpg")
     height: 496px
-    // border: 1px solid blue
-    background-position: 50% 50%
-    background-size: 100% 150%
+    background-size: cover
+    background-position: center center
     z-index: -10
     +breakpoint(ps)
       height: 277px
-      background-size: 100% 100%
   .list
     a 
       display: block
@@ -22,7 +20,6 @@
       font-size: 1.5rem
       font-weight: bold
       top: -90px
-      // border: 1px solid red
       +breakpoint(ps)
         height: 180px
         width: 33.33%
@@ -47,15 +44,15 @@
       position: absolute
       background-image: url("../img/photo-1490914327627-9fe8d52f4d90.jpg")
       z-index: -2
-      background-position: 50% 50%
-      background-size: 100% 100%
+      background-size: cover
+      background-position: center center
       height: 100%
       width: 100%
     .popular
       position: absolute
       background-image: url("../img/photo-1504114133367-631ecd3db3ca.jpg")
-      background-position: 50% 50%
-      background-size: 100% 100%
+      background-size: cover
+      background-position: center center
       z-index: -2
       height: 100%
       width: 100%
@@ -65,14 +62,12 @@
       position: absolute
       background-image: url("../img/photo-1499638472904-ea5c6178a300.jpg")
       z-index: -2
-      background-position: 50% 50%
-      background-size: 100% 100%
+      background-size: cover
+      background-position: center center
       height: 100%
       width: 100%
 .showlong
   background: $c-secondary
-  max-width: $width-long
-  margin: 0 auto
   height: 420px
   margin-bottom: 105px
   +breakpoint(ps)
@@ -89,7 +84,7 @@
       width: calc(100% - 60px)
       height: auto
       margin: 30px
-      font-size: 0.8rem
+      // font-size: 0.8rem
     p 
       line-height: 36px
       font-weight: $weight-light
@@ -104,10 +99,10 @@
     height: 460px
     top: -20px
     background-image: url("../img/photo-1519730722595-a5ff788dea4d.jpg")
-    background-position: 50% 50%
+    background-size: cover
+    background-position: center center
     +breakpoint(ps)
       height: 250px
-      background-size: 100%
       top: 0
   .title
     position: relative
@@ -124,11 +119,9 @@
         width: 196px
         margin-top: 30px 
         margin-left: calc(50% - 98px)
-  //-----------------------
+//-----------------------
 .showlong2
   background: $c-secondary
-  max-width: $width-long
-  margin: 0 auto
   height: 420px
   +breakpoint(ps)
     height: auto
@@ -142,7 +135,7 @@
       width: calc(100% - 60px)
       height: auto
       margin: 30px
-      font-size: 0.8rem
+      // font-size: 0.8rem
     p 
       line-height: 36px
     .p-m
@@ -156,10 +149,10 @@
     height: 460px
     top: -20px
     background-image: url("../img/photo-1501432781167-c0ccfd492297.jpg")
-    background-position: 50% 50%
+    background-size: cover
+    background-position: center center
     +breakpoint(ps)
       height: 250px
-      background-size: 100%
       top: 0
   .title2
     position: relative
@@ -178,8 +171,6 @@
         margin-left: calc(50% - 98px)
 
 .showlong3
-  max-width: $width-long
-  margin: 0 auto
   height: 500px
   +breakpoint(ps)
     height: auto

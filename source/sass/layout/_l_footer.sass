@@ -1,10 +1,7 @@
-@import ../init/variable
-@import ../init/mixin
-
 .l-submit
   background: $c-primary
-  max-width: $width-long
-  margin: 60px auto 0 auto
+  margin-top: 60px
+  margin-bottom: 0
   +breakpoint(ps)
     margin-top: 30px
   .col-row
@@ -27,7 +24,6 @@
       margin-left: 2px
       font-size: 1.2rem
     +breakpoint(mb)
-      // margin-bottom: 33px
       font-size: 1.5rem
       margin-left: 20px
   form  
@@ -64,8 +60,6 @@
 .l-bottom
   height: 341px
   background: $c-secondary
-  max-width: $width-long
-  margin: 0 auto
   color: $c-primary
   +breakpoint(mb)
     height: 311px

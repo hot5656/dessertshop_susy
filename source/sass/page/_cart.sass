@@ -13,7 +13,6 @@
       li
         display: flex
         justify-content: space-between
-        // border: 1px solid blue
         align-items: center
         height: 130px
         padding: 10px 0
@@ -28,16 +27,14 @@
         .dish
           width: 17%
           height: 100%
+          background-size: cover
           background-position: center center
-          background-size: 100% 100%
-          // border: 1px solid green
           +breakpoint(mb)
             width: 130px
             margin-right: 15px
             float: left
         .name-price
           font-size: 1.25rem
-          // border: 1px solid green
           +breakpoint(mb)
             width: calc(100% - 145px)
             float: left
@@ -47,7 +44,6 @@
         .buy-counter
           text-align: center
           height: 48px
-          // border: 1px solid green
           font-size: 0
           button
             width: 48px
@@ -68,7 +64,6 @@
         .item-price    
           font-size: 1.25rem
           width: 17%
-          // border: 1px solid green
           +breakpoint(mb)
             float: left
             width: 100%
@@ -79,7 +74,6 @@
             margin-bottom: 30px
             text-align: right
         .remove
-          // border: 1px solid green
           background: white
           color: $c-primary
           border-width: 0
@@ -108,7 +102,6 @@
           background: $c-secondary
           margin: 0
       .sub-item
-        // border: 1px solid blue
         line-height: 30px
         margin: 0 20px
         +breakpoint(ps)
@@ -123,7 +116,6 @@
           font-weight: $weight-light
       .total
         font-size: 1.25rem
-        // border: 1px solid blue
         line-height: 50px
         margin: 0 20px
         +breakpoint(ps)
@@ -141,6 +133,5 @@
         font-size: 1.5rem
         color: $c-primary
         background: $c-warning
-        // border: 1px solid blue
         &:hover
           background: $c-warning-comp

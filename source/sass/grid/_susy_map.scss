@@ -60,11 +60,9 @@ $grid-min-breakpoints: (
   @if $name == "mb" {
     .col-30px {
       width: calc(100% - 60px);
-      // border: 1px solid red;
     }
     .col-auto {
       width: auto;
-      // border: 1px solid red;
     }
     .col-m0 {
       margin-left: 0;
@@ -90,7 +88,6 @@ $grid-min-breakpoints: (
     }
     .col#{$infix}-auto {
       width: auto;
-      // border: 1px solid red;
     }
     .col#{$infix}-m0 {
       margin-left: 0;
@@ -118,10 +115,6 @@ $grid-min-breakpoints: (
     $infix: breakpoint-infix($name, $breakpoints);
     
     @include media-breakpoint-min($name, $value) {
-      // height: 100%;
-      // .col#{$infix} {
-      //   max-width: 100%;
-      // }
 
       @for $i from 1 through $columns {
         @if $name == "mb" {

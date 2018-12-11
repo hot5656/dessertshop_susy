@@ -2,15 +2,14 @@
 @import ../init/variable
   
 .m-card
-  // border: 1px solid blue
   color: $c-primary
   text-align: center
   position: relative
   &__img
     height: 315px
     width: 100%
-    background-position: 50% 50%
-    background-size: 105%
+    background-size: cover
+    background-position: center center
   &__title
     height: 56px
     font-size: 1.25rem
@@ -21,12 +20,10 @@
     border-left: 1px solid $c-secondary
     border-right: 1px solid $c-secondary
     font-weight: $weight-light
-    // border: 1px solid red
   &__price
     float: left
     width: calc(100% - 57.66%)
     border-right: 1px solid $c-secondary
-    //   border: 1px solid red
   &__cart
     display: block
     width: 100%

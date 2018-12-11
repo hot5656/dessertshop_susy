@@ -16,6 +16,8 @@ gulp
 gulp --env production
 //publish contents to Github pages
 npm ghpage
+// web page
+https://hot5656.github.io/dessertshop_susy/
 ```
 
 ## 紀錄
